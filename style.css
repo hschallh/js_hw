@@ -1,0 +1,70 @@
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: 'Trebuchet', 'Tahoma', 'Arial', 'sans-serif';
+}
+
+.menus_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu_container {
+  flex-grow: 1;
+  min-width: 25%;
+}
+
+.menu_btn {
+  color: #eee;
+  background: #069;
+  transition: background 0.25s;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/*
+creates a down arrow
+SOURCE: https://css-tricks.com/snippets/css/css-triangle/
+*/
+.menu_btn .arrow {
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid #eee;
+  border-bottom: 0.5rem solid transparent;
+}
+
+/* creates an up arrow */
+.menu_container.open .arrow {
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #eee;
+}
+
+.menu_btn:hover {
+  background: #096;
+}
+
+.menu_container.open .menu_btn {
+  background: #096;
+}
+
+.menu_slider {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s;
+}
+
+.menu_container.open .menu_slider {
+  max-height: 500px;
+}
+
+.menu {
+  padding: 1em;
+  border: 2px solid #222;
+}
